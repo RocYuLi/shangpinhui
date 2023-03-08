@@ -37,6 +37,7 @@
               type="text"
               id="autocomplete"
               class="input-error input-xxlarge"
+              v-model="keyword"
             />
             <button class="sui-btn btn-xlarge btn-danger" type="button" @click="gosearch">
               搜索
@@ -50,11 +51,20 @@
 <script>
  export default{
     name:"header",
+    data(){
+      return {
+        keyword:""
+      }
+    },
     methods:{
       gosearch(){
          //搜索按钮回调函数,向search进行跳转
-         this.$router.push("/search")
-
+         //第一种方式：字符串形式
+         //this.$router.push("/search/"+this.keyword+"?k="+this.keyword.toUpperCase());
+         //第二种 模板字符串
+          // this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
+        //第三种：对象
+        this.$router.push({name:"search",params:{keyword:this.keyword},query:{k:this.keyword.toUpperCase()}})
       }
     } 
  }

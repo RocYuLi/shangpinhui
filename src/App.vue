@@ -3,8 +3,8 @@
     <Header></Header> 
     <!-- 路由组件出口 -->
     <router-view></router-view>
-    
-    <Footer></Footer> 
+    <!-- 在Home Search显示 在登录注册 隐藏 -->
+    <Footer v-show="$route.meta.show"></Footer>
   </div>
 </template>
 
