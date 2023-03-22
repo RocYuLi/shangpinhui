@@ -63,12 +63,12 @@ export default new VueRouter({
         },
         {   
             name:"search",
-            path: "/search/:keyword",
+            path: "/search/:keyword?",
             component: Search,
             meta:{show:true},
             //路由组件能不能传props数据？
             //布尔值的写法:params
-            //props:true
+            // props:true
             //对象写法：额外的给路由组件传递一些props
             //props:{a:1,b:2}
             //函数写法，可以把params参数 query参数 通过props传递给路由组件

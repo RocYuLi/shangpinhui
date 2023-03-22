@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style>
-
+#nprogress .bar{
+  background-color:pink !important;
+}
 </style>
